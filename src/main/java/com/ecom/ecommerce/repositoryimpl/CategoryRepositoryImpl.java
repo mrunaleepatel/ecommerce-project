@@ -16,6 +16,10 @@ public class CategoryRepositoryImpl implements CategoryRepository {
     @Autowired
     private SessionFactory sessionFactory;
 
+    public CategoryRepositoryImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
     @Override
     public List<Category>list(){
         String selectActiveCategory = "FROM Category WHERE active = :active";

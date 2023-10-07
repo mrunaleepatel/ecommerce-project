@@ -15,6 +15,10 @@ public class ProductRepositoryImpl implements ProductRepository {
     @Autowired
     private SessionFactory sessionFactory;
 
+    public ProductRepositoryImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
     @Override
     public Product get(int productId) {
         try {
